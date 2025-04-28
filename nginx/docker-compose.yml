@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+
+  nervin_nginx:
+    container_name: l-nervin-nginx
+    image: nginx:1.19.0-alpine
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
+    volumes:
+      - ./../project/:/var/www/
+      - ./data/conf.d:/etc/nginx/conf.d
+      - ./data/log/:/var/log/nginx/
+    networks:
+      - network_nervin
+
+networks:
+  network_nervin:
+    external: true

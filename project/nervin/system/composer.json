@@ -1,0 +1,15 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9.1",
+        "predis/predis": "^2.2",
+        "dompdf/dompdf": "^2.0",
+        "mpdf/mpdf": "^8.2",
+        "phpoffice/phpword": "dev-master",
+        "tecnickcom/tcpdf": "^6.6",
+        "chrome-php/chrome": "^1.10",
+        "phpseclib/phpseclib": "~3.0",
+        "vinkla/hashids": "^11.0",
+        "sqids/sqids": "^0.4.1",
+        "google/apiclient": "^2.0"
+    }
+}

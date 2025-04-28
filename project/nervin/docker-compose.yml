@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  nervin:
+    container_name: l-nervin
+    restart: always
+    build:
+      context: ./config/
+    env_file:
+      - .env
+    volumes:
+      - ./config/php/php.ini-development:/usr/local/etc/php/php.ini-development
+      - ./config/php/php.ini-production:/usr/local/etc/php/php.ini-production
+      - ./config/php/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+      - ./config/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./system:/var/www/nervin/system
+    networks:
+      - network_nervin
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  network_nervin:
+    external: true
